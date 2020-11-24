@@ -17,7 +17,7 @@ yarn update:test-devtools
 ### Debugging
 
 * Want logs from Lighthouse? Add `log.log('status', '**** hello test output ' + JSON.stringify({obj}));` which will be visible in the `lighthouse-successful-run.js` output thanks to `LighthouseTestRunner.addStatusListener`.
-* Want logs from test files? Adding `--driver-logging --no-retry-failures` to the `run_web_tests.py` command in `web-test-server.sh` will print to terminal.
+* Want logs from test files? Adding these flags to the invocation `yarn test-devtools --driver-logging --no-retry-failures` will print to terminal.
 * Want logs from the inspected page? Add `testRunner.setDumpConsoleMessages(true);` to a test file. (also, [beware](https://source.chromium.org/chromium/chromium/src/+/master:content/web_test/renderer/web_view_test_proxy.cc;l=125-129;drc=437e5d9a05535b9e2cd7b983f78b23ebc3d92b3f) w/e this is about)
 
 
