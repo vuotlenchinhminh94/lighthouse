@@ -102,9 +102,12 @@ jobs:
     - run: sudo apt-get install xvfb
       if: matrix.os == 'ubuntu-latest'
 
-    - name: yarn unit
+    - name: yarn unit:coverage
       run: xvfb-run --auto-servernum yarn unit
       if: matrix.os == 'ubuntu-latest'
+    - name: Upload test coverage to Codecov
+      if: matrix.os == 'ubuntu-latest'
+      run: yarn codecov -f unit-coverage.lcov -F unit
 
     # For windows, just test the potentially platform-specific code.
     - name: yarn unit-cli
@@ -155,7 +158,11 @@ jobs:
 
     - run: sudo apt-get install xvfb
     - name: Run smoke tests
-      run: xvfb-run --auto-servernum yarn smoke --debug -j=1 --retries=2 --invert-match ${{ matrix.smoke-test-invert }} $SMOKE_GROUP_1
+      run: xvfb-run --auto-servernum yarn smoke:cicoverage --debug -j=1 --retries=2 --invert-match ${{ matrix.smoke-test-invert }} $SMOKE_GROUP_1
+
+    - name: Upload test coverage to Codecov
+      if: matrix.os == 'ubuntu-latest'
+      run: yarn codecov -f smoke-coverage.lcov -F smoke
 
     # Fail if any changes were written to source files.
     - run: git diff --exit-code
