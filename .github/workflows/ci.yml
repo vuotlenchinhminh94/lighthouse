@@ -102,8 +102,8 @@ jobs:
     - run: sudo apt-get install xvfb
       if: matrix.os == 'ubuntu-latest'
 
-    - name: yarn unit:cicoverage
-      run: xvfb-run --auto-servernum yarn unit
+    - name: yarn unit
+      run: xvfb-run --auto-servernum yarn unit:cicoverage
       if: matrix.os == 'ubuntu-latest'
     - name: Upload test coverage to Codecov
       if: matrix.os == 'ubuntu-latest'
