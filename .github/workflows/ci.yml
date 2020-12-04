@@ -107,7 +107,10 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
     - name: Upload test coverage to Codecov
       if: matrix.os == 'ubuntu-latest'
-      run: yarn codecov -f unit-coverage.lcov -F unit
+      uses: codecov/codecov-action@6004246
+      with:
+        flags: unit
+        file: ./unit-coverage.lcov
 
     # For windows, just test the potentially platform-specific code.
     - name: yarn unit-cli
@@ -162,7 +165,10 @@ jobs:
 
     - name: Upload test coverage to Codecov
       if: matrix.os == 'ubuntu-latest'
-      run: yarn codecov -f smoke-coverage.lcov -F smoke
+      uses: codecov/codecov-action@6004246
+      with:
+        flags: smoke
+        file: ./smoke-coverage.lcov
 
     # Fail if any changes were written to source files.
     - run: git diff --exit-code
