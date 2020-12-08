@@ -24,7 +24,7 @@
     "build-pack": "bash build/build-pack.sh",
     "build-treemap": "node ./build/build-treemap.js",
     "build-viewer": "node ./build/build-viewer.js",
-    "c8": "c8 --include '{lighthouse-core,lighthouse-cli,lighthouse-viewer,lighthouse-treemap}' --exclude third_party --exclude '**/test/' --exclude '**/scripts/'",
+    "c8": "bash lighthouse-core/scripts/c8.sh",
     "clean": "rimraf dist proto/scripts/*.json proto/scripts/*_pb2.* proto/scripts/*_pb.* proto/scripts/__pycache__ proto/scripts/*.pyc *.report.html *.report.dom.html *.report.json *.devtoolslog.json *.trace.json lighthouse-core/lib/i18n/locales/*.ctc.json || true",
     "lint": "[ \"$CI\" = true ] && eslint --quiet -f codeframe . || eslint .",
     "smoke": "node lighthouse-cli/test/smokehouse/frontends/smokehouse-bin.js",
