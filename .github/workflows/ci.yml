@@ -164,7 +164,7 @@ jobs:
       run: xvfb-run --auto-servernum yarn smoke:cicoverage --debug -j=1 --retries=2 --invert-match ${{ matrix.smoke-test-invert }} $SMOKE_GROUP_1
 
     - name: Upload test coverage to Codecov
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.chrome-channel == 'ToT'
       uses: codecov/codecov-action@6004246
       with:
         flags: smoke
