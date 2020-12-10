@@ -15,6 +15,5 @@ node node_modules/.bin/c8 \
   --exclude third_party \
   --exclude '**/test/' \
   --exclude '**/scripts/' \
-  --exclude '**/scripts/' \
   --exclude 'lighthouse-core/lib/page-functions.js' \
   $*
