@@ -18,7 +18,7 @@ const pageFunctions = require('../../lib/page-functions.js');
  * containing any violations.
  * @return {Promise<LH.Artifacts.Accessibility>}
  */
-/* istanbul ignore next */
+/* c8 ignore start */
 function runA11yChecks() {
   // @ts-expect-error axe defined by axeLibSource
   return window.axe.run(document, {
@@ -91,6 +91,7 @@ function runA11yChecks() {
     return axeResults;
   });
 }
+/* c8 ignore stop */
 
 /**
  * @implements {LH.Gatherer.FRGathererInstance}

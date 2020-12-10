@@ -23,7 +23,7 @@ const pageFunctions = require('../../../lib/page-functions.js');
  * @param {boolean=} deep True to include shadow roots. Defaults to true.
  * @return {LH.Artifacts.DOMStats}
  */
-/* istanbul ignore next */
+/* c8 ignore start */
 function getDOMStats(element, deep = true) {
   let deepestElement = null;
   let maxDepth = -1;
@@ -73,6 +73,7 @@ function getDOMStats(element, deep = true) {
     totalBodyElements: result.numElements,
   };
 }
+/* c8 ignore stop */
 
 class DOMStats extends Gatherer {
   /**

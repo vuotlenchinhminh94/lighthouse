@@ -190,6 +190,9 @@
     "yargs": "3.32.0",
     "yargs-parser": "^18.1.3"
   },
+  "resolutions": {
+    "v8-to-istanbul": "git+ssh://git@github.com:connorjclark/v8-to-istanbul.git#06abc4c4"
+  },
   "repository": "GoogleChrome/lighthouse",
   "keywords": [
     "google",

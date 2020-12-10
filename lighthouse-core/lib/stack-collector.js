@@ -39,7 +39,7 @@ const libDetectorSource = fs.readFileSync(
 /**
  * Obtains a list of detected JS libraries and their versions.
  */
-/* istanbul ignore next */
+/* c8 ignore start */
 async function detectLibraries() {
   /** @type {JSLibrary[]} */
   const libraries = [];

@@ -24,7 +24,7 @@ const Driver = require('../../driver.js'); // eslint-disable-line no-unused-vars
 
 /* global document,window,HTMLLinkElement */
 
-/* istanbul ignore next */
+/* c8 ignore start */
 function installMediaListener() {
   window.___linkMediaChanges = [];
   Object.defineProperty(HTMLLinkElement.prototype, 'media', {
@@ -40,11 +40,12 @@ function installMediaListener() {
     },
   });
 }
+/* c8 ignore stop */
 
 /**
  * @return {Promise<{tagName: string, url: string, src: string, href: string, rel: string, media: string, disabled: boolean, mediaChanges: {href: string, media: string, msSinceHTMLEnd: number, matches: boolean}}>}
  */
-/* istanbul ignore next */
+/* c8 ignore start */
 function collectTagsThatBlockFirstPaint() {
   return new Promise((resolve, reject) => {
     try {
@@ -91,6 +92,7 @@ function collectTagsThatBlockFirstPaint() {
     }
   });
 }
+/* c8 ignore stop */
 
 class TagsBlockingFirstPaint extends Gatherer {
   /**

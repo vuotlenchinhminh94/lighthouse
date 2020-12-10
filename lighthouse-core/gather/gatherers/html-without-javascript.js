@@ -14,7 +14,7 @@ const Gatherer = require('./gatherer.js');
 
 /* global document */
 
-/* istanbul ignore next */
+/* c8 ignore start */
 function getBodyText() {
   // note: we use innerText, not textContent, because textContent includes the content of <script> elements!
   const body = document.querySelector('body');
@@ -23,6 +23,7 @@ function getBodyText() {
     hasNoScript: !!document.querySelector('noscript'),
   });
 }
+/* c8 ignore stop */
 
 class HTMLWithoutJavaScript extends Gatherer {
   /**
