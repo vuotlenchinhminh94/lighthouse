@@ -138,7 +138,6 @@ const defaultConfig = {
       'css-usage',
       'js-usage',
       'viewport-dimensions',
-      'runtime-exceptions',
       'console-messages',
       'anchor-elements',
       'image-elements',
@@ -180,10 +179,10 @@ const defaultConfig = {
     passName: 'redirectPass',
     loadFailureMode: 'warn',
     // Speed up the redirect pass by blocking stylesheets, fonts, and images
-    blockedUrlPatterns: ['*.css', '*.jpg', '*.jpeg', '*.png', '*.gif', '*.svg', '*.ttf', '*.woff', '*.woff2'],
+    // TODO: restore blocked *.css when https://github.com/GoogleChrome/lighthouse/issues/11803 is resolved.
+    blockedUrlPatterns: ['*.jpg', '*.jpeg', '*.png', '*.gif', '*.svg', '*.ttf', '*.woff', '*.woff2'],
     gatherers: [
       'http-redirect',
-      'html-without-javascript',
     ],
   }],
   audits: [
@@ -192,7 +191,6 @@ const defaultConfig = {
     'service-worker',
     'works-offline',
     'viewport',
-    'without-javascript',
     'metrics/first-contentful-paint',
     'metrics/largest-contentful-paint',
     'metrics/first-meaningful-paint',
@@ -613,16 +611,14 @@ const defaultConfig = {
         {id: 'works-offline', weight: 5, group: 'pwa-fast-reliable'},
         {id: 'offline-start-url', weight: 1, group: 'pwa-fast-reliable'},
         // Installable
-        {id: 'is-on-https', weight: 2, group: 'pwa-installable'},
-        {id: 'service-worker', weight: 1, group: 'pwa-installable'},
         {id: 'installable-manifest', weight: 2, group: 'pwa-installable'},
         // PWA Optimized
+        {id: 'service-worker', weight: 1, group: 'pwa-optimized'},
         {id: 'redirects-http', weight: 2, group: 'pwa-optimized'},
         {id: 'splash-screen', weight: 1, group: 'pwa-optimized'},
         {id: 'themed-omnibox', weight: 1, group: 'pwa-optimized'},
         {id: 'content-width', weight: 1, group: 'pwa-optimized'},
         {id: 'viewport', weight: 2, group: 'pwa-optimized'},
-        {id: 'without-javascript', weight: 1, group: 'pwa-optimized'},
         {id: 'apple-touch-icon', weight: 1, group: 'pwa-optimized'},
         {id: 'maskable-icon', weight: 1, group: 'pwa-optimized'},
         // Manual audits

@@ -74,6 +74,7 @@ async function detectLibraries() {
 
   return libraries;
 }
+/* c8 ignore stop */
 
 /**
  * @param {LH.Gatherer.PassContext} passContext

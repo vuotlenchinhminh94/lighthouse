@@ -21,9 +21,6 @@ module.exports = [
       requestedUrl: 'https://connorjclark.github.io/pwa.rocks/',
       finalUrl: 'https://connorjclark.github.io/pwa.rocks/',
       audits: {
-        'is-on-https': {
-          score: 1,
-        },
         'redirects-http': {
           score: 1,
         },
@@ -39,12 +36,9 @@ module.exports = [
         'viewport': {
           score: 1,
         },
-        'without-javascript': {
-          score: 1,
-        },
         'installable-manifest': {
           score: 1,
-          details: {items: [pwaRocksExpectations]},
+          details: {items: [], debugData: {manifestUrl: 'https://connorjclark.github.io/pwa.rocks/pwa.webmanifest'}},
         },
         'splash-screen': {
           score: 0,
