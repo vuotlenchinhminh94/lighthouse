@@ -9,7 +9,7 @@
 
 const path = require('path');
 const {deepClone, deepCloneConfigJson, requireAudits, resolveModule} =
-  require('../../config/config.js');
+  require('../../config/config-helpers.js');
 const Gatherer = require('../../gather/gatherers/gatherer.js');
 const UserTimingsAudit = require('../../audits/user-timings.js');
 
