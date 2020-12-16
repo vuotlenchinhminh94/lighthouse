@@ -5,16 +5,22 @@
  */
 'use strict';
 
-const helpers = require('../../config/config-helpers.js');
+/* eslint-env jest */
+
+const path = require('path');
+const {deepClone, deepCloneConfigJson, requireAudits, resolveModule} =
+  require('../../config/config.js');
 const Gatherer = require('../../gather/gatherers/gatherer.js');
 const UserTimingsAudit = require('../../audits/user-timings.js');
 
-/* eslint-env jest */
+jest.mock('process', () => ({
+  cwd: () => jest.fn(),
+}));
 
 describe('.deepClone', () => {
   it('should clone things deeply', () => {
     const input = {a: {b: {c: 1}}};
-    const output = helpers.deepClone(input);
+    const output = deepClone(input);
     expect(output).not.toBe(input);
     expect(output).toEqual(input);
     output.a.b.c = 2;
@@ -32,7 +38,7 @@ describe('.deepCloneConfigJson', () => {
       categories: {random: {auditRefs: [{id: 'user-timings'}]}},
     };
 
-    const output = helpers.deepCloneConfigJson(input);
+    const output = deepCloneConfigJson(input);
     expect(output).not.toBe(input);
     expect(output).toEqual(input);
     output.artifacts[0].id = 'NewName';
@@ -51,7 +57,7 @@ describe('.deepCloneConfigJson', () => {
       passes: [{passName: 'defaultPass', gatherers: [TimingGatherer]}],
     };
 
-    const output = helpers.deepCloneConfigJson(input);
+    const output = deepCloneConfigJson(input);
     expect(output.passes[0].gatherers[0]).toEqual(TimingGatherer);
   });
 
@@ -61,7 +67,7 @@ describe('.deepCloneConfigJson', () => {
       artifacts: [{id: 'Timing', gatherer: TimingGatherer}],
     };
 
-    const output = helpers.deepCloneConfigJson(input);
+    const output = deepCloneConfigJson(input);
     expect(output.artifacts[0].gatherer).toEqual(TimingGatherer);
   });
 
@@ -70,7 +76,7 @@ describe('.deepCloneConfigJson', () => {
       audits: [{implementation: UserTimingsAudit}],
     };
 
-    const output = helpers.deepCloneConfigJson(input);
+    const output = deepCloneConfigJson(input);
     expect(output.audits[0].implementation).toEqual(UserTimingsAudit);
   });
 });
@@ -78,13 +84,13 @@ describe('.deepCloneConfigJson', () => {
 
 describe('.requireAudits', () => {
   it('should expand audit short-hand', () => {
-    const result = helpers.requireAudits(['user-timings']);
+    const result = requireAudits(['user-timings']);
 
     expect(result).toEqual([{path: 'user-timings', options: {}, implementation: UserTimingsAudit}]);
   });
 
   it('should handle multiple audit definition styles', () => {
-    const result = helpers.requireAudits(['user-timings', {implementation: UserTimingsAudit}]);
+    const result = requireAudits(['user-timings', {implementation: UserTimingsAudit}]);
 
     expect(result).toMatchObject([{path: 'user-timings'}, {implementation: UserTimingsAudit}]);
   });
@@ -95,7 +101,7 @@ describe('.requireAudits', () => {
       {path: 'is-on-https', options: {x: 1, y: 1}},
       {path: 'is-on-https', options: {x: 2}},
     ];
-    const merged = helpers.requireAudits(audits);
+    const merged = requireAudits(audits);
     expect(merged).toMatchObject([
       {path: 'user-timings', options: {}},
       {path: 'is-on-https', options: {x: 2, y: 1}},
@@ -103,6 +109,67 @@ describe('.requireAudits', () => {
   });
 
   it('throws for invalid auditDefns', () => {
-    expect(() => helpers.requireAudits([new Gatherer()])).toThrow(/Invalid Audit type/);
+    expect(() => requireAudits([new Gatherer()])).toThrow(/Invalid Audit type/);
+  });
+});
+
+describe('resolveModule', () => {
+  const configFixturePath = path.resolve(__dirname, '../fixtures/config');
+
+  beforeEach(() => {
+    process.cwd = jest.fn(() => configFixturePath);
+  });
+
+  it('lighthouse and plugins are installed in the same path', () => {
+    const pluginName = 'chrome-launcher';
+    const pathToPlugin = resolveModule(pluginName, null, 'plugin');
+    expect(pathToPlugin).toEqual(require.resolve(pluginName));
+  });
+
+  describe('plugin paths to a file', () => {
+    it('relative to the current working directory', () => {
+      const pluginName = 'lighthouse-plugin-config-helper';
+      const pathToPlugin = resolveModule(pluginName, null, 'plugin');
+      expect(pathToPlugin).toEqual(require.resolve(path.resolve(configFixturePath, pluginName)));
+    });
+
+    it('relative to the config path', () => {
+      process.cwd = jest.fn(() => path.resolve(configFixturePath, '../'));
+      const pluginName = 'lighthouse-plugin-config-helper';
+      const pathToPlugin = resolveModule(pluginName, configFixturePath, 'plugin');
+      expect(pathToPlugin).toEqual(require.resolve(path.resolve(configFixturePath, pluginName)));
+    });
+  });
+
+  describe('lighthouse and plugins are installed by npm', () => {
+    const pluginsDirectory = path.resolve(__dirname, '../fixtures/config/');
+
+    // working directory/
+    //   |-- node_modules/
+    //   |-- package.json
+    it('in current working directory', () => {
+      const pluginName = 'plugin-in-working-directory';
+      const pluginDir = `${pluginsDirectory}/node_modules/plugin-in-working-directory`;
+      process.cwd = jest.fn(() => pluginsDirectory);
+
+      const pathToPlugin = resolveModule(pluginName, null, 'plugin');
+
+      expect(pathToPlugin).toEqual(require.resolve(pluginName, {paths: [pluginDir]}));
+    });
+
+    // working directory/
+    //   |-- config directory/
+    //     |-- node_modules/
+    //     |-- config.js
+    //     |-- package.json
+    it('relative to the config path', () => {
+      const pluginName = 'plugin-in-config-directory';
+      const configDirectory = `${pluginsDirectory}/config`;
+      process.cwd = jest.fn(() => '/usr/bin/node');
+
+      const pathToPlugin = resolveModule(pluginName, configDirectory, 'plugin');
+
+      expect(pathToPlugin).toEqual(require.resolve(pluginName, {paths: [configDirectory]}));
+    });
   });
 });
