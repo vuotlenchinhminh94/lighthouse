@@ -168,6 +168,16 @@ function getOuterHTMLSnippet(element, ignoreAttrs = [], snippetCharacterLimit = 
   }
 }
 
+/**
+ * Get the maximum size of a texture the GPU can handle
+ * @see https://bugs.chromium.org/p/chromium/issues/detail?id=770769#c13
+ */
+/* istanbul ignore next */ // todo, c8 ignore?
+function getMaxTextureSize() {
+  const canvas = document.createElement('canvas');
+  const webGL = canvas.getContext('webgl');
+  return webGL.getParameter(webGL.MAX_TEXTURE_SIZE);
+}
 
 /**
  * Computes a memory/CPU performance benchmark index to determine rough device class.
@@ -519,6 +529,7 @@ module.exports = {
   getOuterHTMLSnippet: getOuterHTMLSnippet,
   computeBenchmarkIndex: computeBenchmarkIndex,
   computeBenchmarkIndexString: computeBenchmarkIndex.toString(),
+  getMaxTextureSize,
   getNodeDetailsString,
   getNodePathString: getNodePath.toString(),
   getNodeSelectorString: getNodeSelector.toString(),

@@ -9,6 +9,9 @@
 
 const FullPageScreenshotGatherer = require('../../../gather/gatherers/full-page-screenshot.js');
 
+// Headless's default value is (1024 * 16), but this varies by device
+const maxTextureSizeMock = 1024 * 8;
+
 /**
  * @param {{contentSize: {width: number, height: number}, screenSize: {width?: number, height?: number, dpr: number}, screenshotData: string[]}}
  */
@@ -17,6 +20,9 @@ function createMockDriver({contentSize, screenSize, screenshotData}) {
     evaluateAsync: async function(code) {
       if (code === 'window.innerWidth') {
         return contentSize.width;
+      }
+      if (code.includes('MAX_TEXTURE_SIZE')) {
+        return maxTextureSizeMock;
       }
       if (code.includes('document.documentElement.clientWidth')) {
         return {
@@ -191,7 +197,7 @@ describe('FullPageScreenshot gatherer', () => {
       'Emulation.setDeviceMetricsOverride',
       expect.objectContaining({
         deviceScaleFactor: 1,
-        height: FullPageScreenshotGatherer.MAX_SCREENSHOT_HEIGHT,
+        height: maxTextureSizeMock,
       })
     );
   });
