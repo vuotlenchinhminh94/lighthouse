@@ -128,7 +128,10 @@ const expectations = [
               {
                 node: {
                   'type': 'node',
-                  'boundingRect': undefined,
+                  'boundingRect': {
+                    'width': '>0',
+                    'height': 0,
+                  },
                   'selector': 'body > section > div > div#aria-treeitem-name',
                   'snippet': '<div id="aria-treeitem-name" role="treeitem">',
                   'explanation': 'Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  aria-label attribute does not exist or is empty\n  Element has no title attribute',
@@ -145,7 +148,10 @@ const expectations = [
               {
                 node: {
                   'type': 'node',
-                  'boundingRect': undefined,
+                  'boundingRect': {
+                    'width': '>0',
+                    'height': 0,
+                  },
                   'selector': 'body > section > div#aria-command-name',
                   'snippet': '<div id="aria-command-name" role="button">',
                   'explanation': 'Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have text that is visible to screen readers',
@@ -162,7 +168,10 @@ const expectations = [
               {
                 node: {
                   'type': 'node',
-                  'boundingRect': undefined,
+                  'boundingRect': {
+                    'width': '>0',
+                    'height': 0,
+                  },
                   'selector': 'body > section > div#aria-tooltip-name',
                   'snippet': '<div id="aria-tooltip-name" role="tooltip">',
                   'explanation': 'Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have text that is visible to screen readers',
