@@ -174,9 +174,19 @@ function getOuterHTMLSnippet(element, ignoreAttrs = [], snippetCharacterLimit = 
  */
 /* istanbul ignore next */ // todo, c8 ignore?
 function getMaxTextureSize() {
-  const canvas = document.createElement('canvas');
-  const webGL = canvas.getContext('webgl');
-  return webGL.getParameter(webGL.MAX_TEXTURE_SIZE);
+  try {
+    let canvas = document.createElement('canvas');
+    let gl = canvas.getContext('webgl');
+    const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+    canvas = gl = undefined; // Cleanup for GC
+    return maxTextureSize;
+  } catch (e) {
+    // If the above fails for any reason we need a fallback number;
+    // 4096 is the max texture size on a Pixel 2 XL, so to be conservative we'll use a low value like it.
+    // But we'll subtract 1 just to identify this case later on.
+    const MAX_TEXTURE_SIZE_FALLBACK = 4095;
+    return MAX_TEXTURE_SIZE_FALLBACK;
+  }
 }
 
 /**
