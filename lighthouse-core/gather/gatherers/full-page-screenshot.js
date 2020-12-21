@@ -9,7 +9,8 @@
 
 const Gatherer = require('./gatherer.js');
 const pageFunctions = require('../../lib/page-functions.js');
-const Driver = require('../driver.js'); // eslint-disable-line no-unused-vars
+
+/** @typedef {import('../driver.js')} Driver */
 
 // JPEG quality setting
 // Exploration and examples of reports using different quality settings: https://docs.google.com/document/d/1ZSffucIca9XDW2eEwfoevrk-OTl7WQFeMf0CgeJAA8M/edit#
