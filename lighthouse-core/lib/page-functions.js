@@ -409,14 +409,12 @@ function getNodeLabel(node) {
 
 /**
  * @param {HTMLElement} element
- * @return {LH.Artifacts.Rect|undefined}
+ * @return {LH.Artifacts.Rect}
  */
 /* istanbul ignore next */
 function getBoundingClientRect(element) {
   // The protocol does not serialize getters, so extract the values explicitly.
   const rect = element.getBoundingClientRect();
-  if (rect.width === 0 || rect.height === 0) return;
-
   return {
     top: Math.round(rect.top),
     bottom: Math.round(rect.bottom),
