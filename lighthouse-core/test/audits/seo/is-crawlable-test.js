@@ -12,7 +12,7 @@ const networkRecordsToDevtoolsLog = require('../../network-records-to-devtools-l
 /* eslint-env jest */
 
 describe('SEO: Is page crawlable audit', () => {
-  const makeMetaElements = content => [{name: 'robots', content, node: {}}];
+  const makeMetaElements = content => [{name: 'robots', content}];
 
   it('fails when page is blocked from indexing with a robots metatag', () => {
     const robotsValues = [
@@ -323,7 +323,6 @@ describe('SEO: Is page crawlable audit', () => {
         Array [
           Object {
             "source": Object {
-              "path": undefined,
               "snippet": "<meta name=\\"robots\\" content=\\"noindex\\" />",
               "type": "node",
             },
