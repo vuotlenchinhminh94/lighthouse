@@ -1841,6 +1841,7 @@
             "node": {
               "type": "node",
               "lhId": "page-1-IMG",
+              "path": "3,HTML,1,BODY,14,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -1851,8 +1852,7 @@
                 "height": 80
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?iar2\" width=\"120\" height=\"80\">",
-              "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,14,IMG"
+              "nodeLabel": "img"
             }
           }
         ]
@@ -1884,37 +1884,37 @@
           {
             "node": {
               "type": "node",
+              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,3,H5",
               "selector": "div.blog-index > article > div.entry-content > h5",
-              "nodeLabel": "Debugging Node.js with Chrome DevTools",
               "snippet": "<h5>",
-              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,3,H5"
+              "nodeLabel": "Debugging Node.js with Chrome DevTools"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,4,P",
               "selector": "div.blog-index > article > div.entry-content > p",
-              "nodeLabel": "The canonical guide to using the Chrome DevTools UI for debugging Node.js. It d…",
               "snippet": "<p>",
-              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,4,P"
+              "nodeLabel": "The canonical guide to using the Chrome DevTools UI for debugging Node.js. It d…"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,5,HR",
               "selector": "div.blog-index > article > div.entry-content > hr",
-              "nodeLabel": "hr",
               "snippet": "<hr>",
-              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,5,HR"
+              "nodeLabel": "hr"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,6,P",
               "selector": "div.blog-index > article > div.entry-content > p",
-              "nodeLabel": "Aside from that, I’ve been busy working on Lighthouse, performance metrics, too…",
               "snippet": "<p>",
-              "path": "1,HTML,1,BODY,2,DIV,0,DIV,0,DIV,0,ARTICLE,1,DIV,6,P"
+              "nodeLabel": "Aside from that, I’ve been busy working on Lighthouse, performance metrics, too…"
             }
           }
         ]
@@ -2033,10 +2033,10 @@
           {
             "node": {
               "type": "node",
+              "path": "1,HTML,1,BODY,0,DIV",
               "selector": "body > div#animated-boi",
-              "nodeLabel": "div",
               "snippet": "<div id=\"animated-boi\">",
-              "path": "1,HTML,1,BODY,0,DIV"
+              "nodeLabel": "div"
             },
             "subItems": {
               "type": "subitems",
@@ -2089,6 +2089,7 @@
             "node": {
               "type": "node",
               "lhId": "page-7-IMG",
+              "path": "3,HTML,1,BODY,63,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 1295,
@@ -2099,8 +2100,7 @@
                 "height": 16
               },
               "snippet": "<img src=\"blob:http://localhost:10200/822c70a0-b912-41c7-9a21-56c3d309e75b\">",
-              "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,63,IMG"
+              "nodeLabel": "img"
             }
           },
           {
@@ -2108,6 +2108,7 @@
             "node": {
               "type": "node",
               "lhId": "page-8-IMG",
+              "path": "3,HTML,1,BODY,72,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 1317,
@@ -2118,8 +2119,7 @@
                 "height": 16
               },
               "snippet": "<img src=\"filesystem:http://localhost:10200/temporary/empty-0.8423185960902964.png\">",
-              "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,72,IMG"
+              "nodeLabel": "img"
             }
           }
         ]
@@ -2738,6 +2738,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,7,DIV,0,H2",
               "selector": "body > div > h2",
               "boundingRect": {
                 "top": 336,
@@ -2749,13 +2750,13 @@
               },
               "snippet": "<h2>",
               "nodeLabel": "Do better web tester page",
-              "path": "3,HTML,1,BODY,7,DIV,0,H2",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 1.32 (foreground color: #ffc0cb, background color: #eeeeee, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,7,DIV,1,SPAN",
               "selector": "body > div > span",
               "boundingRect": {
                 "top": 384,
@@ -2767,7 +2768,6 @@
               },
               "snippet": "<span>",
               "nodeLabel": "Hi there!",
-              "path": "3,HTML,1,BODY,7,DIV,1,SPAN",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 1.32 (foreground color: #ffc0cb, background color: #eeeeee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
             }
           }
@@ -2873,6 +2873,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML",
               "selector": "html",
               "boundingRect": {
                 "top": 0,
@@ -2884,7 +2885,6 @@
               },
               "snippet": "<html manifest=\"clock.appcache\">",
               "nodeLabel": "html",
-              "path": "3,HTML",
               "explanation": "Fix any of the following:\n  The <html> element does not have a lang attribute"
             }
           }
@@ -2926,6 +2926,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,12,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 639,
@@ -2937,13 +2938,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?iar1\" width=\"120\" height=\"15\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,12,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,14,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -2955,13 +2956,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?iar2\" width=\"120\" height=\"80\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,14,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,16,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -2973,13 +2974,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?isr1\" width=\"4800\" height=\"3180\" style=\"position: absolute;\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,16,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,18,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -2991,13 +2992,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?isr2\" width=\"120\" height=\"80\" style=\"position: absolute;\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,18,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,20,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -3009,13 +3010,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?isr3\" width=\"960\" height=\"636\" style=\"image-rendering: pixelated; position: absolute;\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,20,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,22,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 574,
@@ -3027,13 +3028,13 @@
               },
               "snippet": "<img src=\"lighthouse-480x318.jpg?isr4\" srcset=\"lighthouse-480x318.jpg 2x\" width=\"960\" height=\"636\" style=\"position: absolute;\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,22,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,24,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 658,
@@ -3045,13 +3046,13 @@
               },
               "snippet": "<img src=\"lighthouse-rotating.gif\" width=\"811\" height=\"462\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,24,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,63,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 1295,
@@ -3063,13 +3064,13 @@
               },
               "snippet": "<img src=\"blob:http://localhost:10200/75859e89-fbad-4471-b196-9304adbb874a\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,63,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,72,IMG",
               "selector": "body > img",
               "boundingRect": {
                 "top": 1317,
@@ -3081,7 +3082,6 @@
               },
               "snippet": "<img src=\"filesystem:http://localhost:10200/temporary/empty-0.34660357368794004.png\">",
               "nodeLabel": "img",
-              "path": "3,HTML,1,BODY,72,IMG",
               "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           }
@@ -3125,6 +3125,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,58,INPUT",
               "selector": "body > input",
               "boundingRect": {
                 "top": 1274,
@@ -3136,13 +3137,13 @@
               },
               "snippet": "<input type=\"password\" onpaste=\"event.preventDefault();\">",
               "nodeLabel": "input",
-              "path": "3,HTML,1,BODY,58,INPUT",
               "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,60,INPUT",
               "selector": "body > input",
               "boundingRect": {
                 "top": 1296,
@@ -3154,13 +3155,13 @@
               },
               "snippet": "<input type=\"password\">",
               "nodeLabel": "input",
-              "path": "3,HTML,1,BODY,60,INPUT",
               "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,62,INPUT",
               "selector": "body > input",
               "boundingRect": {
                 "top": 1296,
@@ -3172,7 +3173,6 @@
               },
               "snippet": "<input type=\"password\" onpaste=\"return false;\">",
               "nodeLabel": "input",
-              "path": "3,HTML,1,BODY,62,INPUT",
               "explanation": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is empty"
             }
           }
@@ -3210,6 +3210,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,54,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1275,
@@ -3221,13 +3222,13 @@
               },
               "snippet": "<a href=\"javascript:void(0)\" target=\"_blank\">",
               "nodeLabel": "a",
-              "path": "3,HTML,1,BODY,54,A",
               "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,56,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1275,
@@ -3239,7 +3240,6 @@
               },
               "snippet": "<a href=\"mailto:inbox@email.com\" target=\"_blank\">",
               "nodeLabel": "a",
-              "path": "3,HTML,1,BODY,56,A",
               "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           }
@@ -3310,6 +3310,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,2,OBJECT",
               "selector": "body > object#5934a",
               "boundingRect": {
                 "top": 8,
@@ -3321,13 +3322,13 @@
               },
               "snippet": "<object id=\"5934a\">",
               "nodeLabel": "object",
-              "path": "3,HTML,1,BODY,2,OBJECT",
               "explanation": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,3,OBJECT",
               "selector": "body > object#5934b",
               "boundingRect": {
                 "top": 162,
@@ -3339,7 +3340,6 @@
               },
               "snippet": "<object id=\"5934b\">",
               "nodeLabel": "object",
-              "path": "3,HTML,1,BODY,3,OBJECT",
               "explanation": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
             }
           }
@@ -4094,7 +4094,7 @@
           {
             "node": {
               "type": "node",
-              "max": 4,
+              "path": "3,HTML,1,BODY,7,DIV,3,svg,0,title",
               "selector": "body > div > svg.social-facebook > title#social-facebook-5",
               "boundingRect": {
                 "top": 0,
@@ -4105,8 +4105,7 @@
                 "height": 0
               },
               "snippet": "<title id=\"social-facebook-5\">",
-              "nodeLabel": "title",
-              "path": "3,HTML,1,BODY,7,DIV,3,svg,0,title"
+              "nodeLabel": "title"
             },
             "statistic": "Maximum DOM Depth",
             "value": 4
@@ -4114,7 +4113,7 @@
           {
             "node": {
               "type": "node",
-              "max": 100,
+              "path": "3,HTML,1,BODY,4,DIV,a,#document-fragment",
               "selector": "body > div#shadow-root-container",
               "boundingRect": {
                 "top": 316,
@@ -4125,8 +4124,7 @@
                 "height": 0
               },
               "snippet": "<div id=\"shadow-root-container\">",
-              "nodeLabel": "div",
-              "path": "3,HTML,1,BODY,4,DIV,a,#document-fragment"
+              "nodeLabel": "div"
             },
             "statistic": "Maximum Child Elements",
             "value": 100
@@ -4156,6 +4154,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,36,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1166,
@@ -4166,8 +4165,7 @@
                 "height": 18
               },
               "snippet": "<a href=\"https://www.google.com/\" target=\"_blank\">",
-              "nodeLabel": "external link",
-              "path": "3,HTML,1,BODY,36,A"
+              "nodeLabel": "external link"
             },
             "href": "https://www.google.com/",
             "target": "_blank",
@@ -4177,6 +4175,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,38,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1166,
@@ -4187,8 +4186,7 @@
                 "height": 18
               },
               "snippet": "<a target=\"_blank\">",
-              "nodeLabel": "external link",
-              "path": "3,HTML,1,BODY,38,A"
+              "nodeLabel": "external link"
             },
             "href": "Unknown",
             "target": "_blank",
@@ -4198,6 +4196,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,40,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1166,
@@ -4208,8 +4207,7 @@
                 "height": 18
               },
               "snippet": "<a href=\"https://www.google.com/\" target=\"_blank\" rel=\"nofollow\">",
-              "nodeLabel": "external link",
-              "path": "3,HTML,1,BODY,40,A"
+              "nodeLabel": "external link"
             },
             "href": "https://www.google.com/",
             "target": "_blank",
@@ -4430,6 +4428,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,58,INPUT",
               "selector": "body > input",
               "boundingRect": {
                 "top": 1274,
@@ -4440,13 +4439,13 @@
                 "height": 21
               },
               "snippet": "<input type=\"password\" onpaste=\"event.preventDefault();\">",
-              "nodeLabel": "input",
-              "path": "3,HTML,1,BODY,58,INPUT"
+              "nodeLabel": "input"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,62,INPUT",
               "selector": "body > input",
               "boundingRect": {
                 "top": 1296,
@@ -4457,8 +4456,7 @@
                 "height": 21
               },
               "snippet": "<input type=\"password\" onpaste=\"return false;\">",
-              "nodeLabel": "input",
-              "path": "3,HTML,1,BODY,62,INPUT"
+              "nodeLabel": "input"
             }
           }
         ]
@@ -4670,6 +4668,7 @@
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,38,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1166,
@@ -4680,13 +4679,13 @@
                 "height": 18
               },
               "snippet": "<a target=\"_blank\">",
-              "nodeLabel": "external link",
-              "path": "3,HTML,1,BODY,38,A"
+              "nodeLabel": "external link"
             }
           },
           {
             "node": {
               "type": "node",
+              "path": "3,HTML,1,BODY,54,A",
               "selector": "body > a",
               "boundingRect": {
                 "top": 1275,
@@ -4697,8 +4696,7 @@
                 "height": 18
               },
               "snippet": "<a href=\"javascript:void(0)\" target=\"_blank\">",
-              "nodeLabel": "a",
-              "path": "3,HTML,1,BODY,54,A"
+              "nodeLabel": "a"
             }
           }
         ]
@@ -4753,9 +4751,8 @@
           {
             "tapTarget": {
               "type": "node",
-              "snippet": "<button class=\"small-button\">Do something</button>",
+              "path": "3,HTML,1,BODY,17,BUTTON",
               "selector": "body > button.small-button",
-              "nodeLabel": "Do something",
               "boundingRect": {
                 "left": 8,
                 "right": 208,
@@ -4764,13 +4761,13 @@
                 "width": 200,
                 "height": 18
               },
-              "path": "3,HTML,1,BODY,17,BUTTON"
+              "snippet": "<button class=\"small-button\">Do something</button>",
+              "nodeLabel": "Do something"
             },
             "overlappingTarget": {
               "type": "node",
-              "snippet": "<button class=\"small-button\">Do something else</button>",
+              "path": "3,HTML,1,BODY,18,BUTTON",
               "selector": "body > button.small-button",
-              "nodeLabel": "Do something else",
               "boundingRect": {
                 "left": 8,
                 "right": 208,
@@ -4779,7 +4776,8 @@
                 "width": 200,
                 "height": 18
               },
-              "path": "3,HTML,1,BODY,18,BUTTON"
+              "snippet": "<button class=\"small-button\">Do something else</button>",
+              "nodeLabel": "Do something else"
             },
             "tapTargetScore": 864,
             "overlappingTargetScore": 720,

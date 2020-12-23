@@ -221,12 +221,14 @@ class Audit {
    * @return {LH.Audit.Details.NodeValue}
    */
   static makeNodeItem(node) {
-    const {devtoolsNodePath, ...rest} = node;
-
     return {
       type: 'node',
-      ...rest,
-      path: devtoolsNodePath,
+      lhId: node.lhId,
+      path: node.devtoolsNodePath,
+      selector: node.selector,
+      boundingRect: node.boundingRect,
+      snippet: node.snippet,
+      nodeLabel: node.nodeLabel,
     };
   }
 
