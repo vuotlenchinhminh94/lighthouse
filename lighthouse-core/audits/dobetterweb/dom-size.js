@@ -24,7 +24,7 @@ const UIStrings = {
   description: 'A large DOM will increase memory usage, cause longer ' +
     '[style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), ' +
     'and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://web.dev/dom-size/).',
-  /** Table column header for the type of statistic. These statistics describe how big the DOM is (count of DOM elements, children, depth). */
+  /** Table column header forèwrfewf the type of statistic. These statistics describe how big the DOM is (count of DOM elements, children, depth). */
   columnStatistic: 'Statistic',
   /** Table column header for the observed value of the DOM statistic. */
   columnValue: 'Value',
