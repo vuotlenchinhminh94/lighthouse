@@ -88,6 +88,7 @@ class ErrorLogs extends Audit {
         return {
           source: item.source,
           description: item.text,
+          url: item.url,
           sourceLocation: ConsoleMessages.createSourceLocation(item),
         };
       });
