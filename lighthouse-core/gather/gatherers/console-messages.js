@@ -31,6 +31,22 @@ function remoteObjectToString(obj) {
 }
 
 class ConsoleMessages extends Gatherer {
+  /**
+   * @param {LH.Artifacts.ConsoleMessage} entry
+   * @return {LH.Audit.Details.SourceLocationValue | undefined}
+   */
+  static createSourceLocation(entry) {
+    if (!entry.url) return;
+
+    return {
+      type: 'source-location',
+      url: entry.url,
+      urlProvider: 'network',
+      line: entry.lineNumber || 0,
+      column: entry.columnNumber || 0,
+    };
+  }
+
   constructor() {
     super();
     /** @type {LH.Artifacts.ConsoleMessage[]} */
@@ -51,6 +67,7 @@ class ConsoleMessages extends Gatherer {
       // Only gather warnings and errors for brevity.
       return;
     }
+
     /** @type {LH.Crdp.Runtime.RemoteObject[]} */
     const args = event.args || [];
     const text = args.map(remoteObjectToString).join(' ');
@@ -58,6 +75,7 @@ class ConsoleMessages extends Gatherer {
       // No useful information from Chrome. Skip.
       return;
     }
+
     const {url, lineNumber, columnNumber} =
       event.stackTrace && event.stackTrace.callFrames[0] || {};
     /** @type {LH.Artifacts.ConsoleMessage} */
@@ -107,6 +125,11 @@ class ConsoleMessages extends Gatherer {
    */
   onLogEntry(event) {
     const {source, level, text, stackTrace, timestamp, url, lineNumber} = event.entry;
+
+    // JS events have a stack trace, which we use to get the column.
+    // CSS/HTML events only expose a line number.
+    const {columnNumber} = event.entry.stackTrace && event.entry.stackTrace.callFrames[0] || {};
+
     this._logEntries.push({
       eventType: 'protocolLog',
       source,
@@ -116,6 +139,7 @@ class ConsoleMessages extends Gatherer {
       timestamp,
       url,
       lineNumber,
+      columnNumber,
     });
   }
 

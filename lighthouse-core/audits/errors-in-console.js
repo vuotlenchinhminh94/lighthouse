@@ -13,6 +13,7 @@
 const log = require('lighthouse-logger');
 const Audit = require('./audit.js');
 const i18n = require('../lib/i18n/i18n.js');
+const ConsoleMessages = require('../gather/gatherers/console-messages.js');
 
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on browser errors. This descriptive title is shown to users when no browser errors were logged into the devtools console. */
@@ -48,7 +49,6 @@ class ErrorLogs extends Audit {
     return {};
   }
 
-
   /**
    * @template {{description: string | undefined}} T
    * @param {Array<T>} items
@@ -81,14 +81,14 @@ class ErrorLogs extends Audit {
     /** @type {AuditOptions} */
     const auditOptions = context.options;
 
-    /** @type {Array<{source: string, description: string|undefined, url: string|undefined}>} */
+    /** @type {Array<{source: string, description: string|undefined, sourceLocation: LH.Audit.Details.SourceLocationValue|undefined}>} */
     const consoleRows = artifacts.ConsoleMessages
       .filter(item => item.level === 'error')
       .map(item => {
         return {
           source: item.source,
           description: item.text,
-          url: item.url,
+          sourceLocation: ConsoleMessages.createSourceLocation(item),
         };
       });
 

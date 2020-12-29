@@ -13,6 +13,7 @@
 
 const Audit = require('./audit.js');
 const i18n = require('../lib/i18n/i18n.js');
+const ConsoleMessages = require('../gather/gatherers/console-messages.js');
 
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on the use of deprecated APIs. This descriptive title is shown to users when the page does not use deprecated APIs. */
@@ -57,33 +58,16 @@ class Deprecations extends Audit {
     const entries = artifacts.ConsoleMessages;
 
     const deprecations = entries.filter(log => log.source === 'deprecation').map(log => {
-      // HTML deprecations will have no url and no way to attribute to a specific line.
-      /** @type {LH.Audit.Details.SourceLocationValue=} */
-      let source;
-      if (log.url) {
-        // JS deprecations will have a stack trace.
-        // CSS deprecations only expose a line number.
-        const topCallFrame = log.stackTrace && log.stackTrace.callFrames[0];
-        const line = log.lineNumber || 0;
-        const column = topCallFrame ? topCallFrame.columnNumber : 0;
-        source = {
-          type: 'source-location',
-          url: log.url,
-          urlProvider: 'network',
-          line,
-          column,
-        };
-      }
       return {
         value: log.text,
-        source,
+        source: ConsoleMessages.createSourceLocation(log),
       };
     });
 
     /** @type {LH.Audit.Details.Table['headings']} */
     const headings = [
       {key: 'value', itemType: 'text', text: str_(UIStrings.columnDeprecate)},
-      {key: 'source', itemType: 'source-location', text: str_(i18n.UIStrings.columnURL)},
+      {key: 'source', itemType: 'source-location', text: str_(i18n.UIStrings.columnSource)},
     ];
     const details = Audit.makeTableDetails(headings, deprecations);
 
